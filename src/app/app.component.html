@@ -1,0 +1,15 @@
+<div class="container-fluid">
+    <form [formGroup]="form" (submit)="onSubmit()">
+        <div class="form-group">
+            <h1 class="text-center">THINGS TO DO</h1>
+            <div class="input-group-prepend">
+                <input [formControlName]="'todo'" type="text" class="form-control" placeholder="Add new" name="todo">
+            </div>
+        </div>
+        <div class="data">
+            <ul class="list-unstyled">
+                <li [@moveInLeft] *ngFor="let todo of todoArray; let i = index">{{todo}} <i (click)="onDeleteToDo(i)" class="material-icons">delete</i></li>
+            </ul>
+        </div>
+    </form>
+</div>
